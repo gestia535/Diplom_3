@@ -1,5 +1,4 @@
 import allure
-from data import PROFILE_URL, ORDER_HISTORY_URL, LOGIN_URL
 
 
 class TestUserAccountPage:
@@ -9,7 +8,7 @@ class TestUserAccountPage:
         main_page.click_login_button()
         user_acc_page.login()
         main_page.click_account_button()
-        assert driver.current_url == PROFILE_URL
+        assert user_acc_page.is_on_profile_page()
 
     @allure.title('Проверка перехода в раздел "История заказов" в ЛК')
     def test_open_history_page(self, driver, main_page, user_acc_page):
@@ -17,7 +16,7 @@ class TestUserAccountPage:
         user_acc_page.login()
         main_page.click_account_button()
         user_acc_page.click_order_history_button()
-        assert driver.current_url == ORDER_HISTORY_URL
+        assert user_acc_page.is_on_order_history_page()
 
     @allure.title('Проверка выхода из ЛК')
     def test_logout(self, driver, main_page, user_acc_page):
@@ -25,4 +24,4 @@ class TestUserAccountPage:
         user_acc_page.login()
         main_page.click_account_button()
         user_acc_page.click_logout_button()
-        assert driver.current_url == LOGIN_URL
+        assert user_acc_page.is_on_login_page()

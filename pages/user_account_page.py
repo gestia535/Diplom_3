@@ -1,6 +1,6 @@
 import allure
 
-from data import TEST_EMAIL, TEST_PASSWORD, BASE_URL, LOGIN_URL
+from data import TEST_EMAIL, TEST_PASSWORD, BASE_URL, LOGIN_URL, PROFILE_URL, ORDER_HISTORY_URL
 from locators.user_account_page_locators import TestUserAccountPageLocators
 from pages.base_page import BasePage
 
@@ -24,3 +24,15 @@ class UserAccountPage(BasePage):
         self.find_element_with_wait(TestUserAccountPageLocators.LOGOUT_BUTTON_ACC_PAGE)
         self.click_on_element(TestUserAccountPageLocators.LOGOUT_BUTTON_ACC_PAGE)
         self.wait_url_to_be(LOGIN_URL)
+
+    @allure.step('Проверка, что текущий url - это url Личного кабинета')
+    def is_on_profile_page(self):
+        return self.driver.current_url == PROFILE_URL
+
+    @allure.step('Проверка, что текущий url - это url раздела История заказов')
+    def is_on_order_history_page(self):
+        return self.driver.current_url == ORDER_HISTORY_URL
+
+    @allure.step('Проверка, что текущий url - это url страницы авторизации')
+    def is_on_login_page(self):
+        return self.driver.current_url == LOGIN_URL
