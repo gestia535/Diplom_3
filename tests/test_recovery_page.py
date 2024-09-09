@@ -26,5 +26,6 @@ class TestRecoveryPasswordPage:
         pass_recovery_page.click_restore_password_button()
         pass_recovery_page.set_email_field()
         pass_recovery_page.click_reset_password_button()
-        pass_recovery_page.click_hide_password_button()
-        assert pass_recovery_page.check_visibility_passw_field_active
+        pass_recovery_page.find_save_button()
+        pass_recovery_page.click_on_show_password_button()
+        assert pass_recovery_page.check_visibility_passw_field_active()

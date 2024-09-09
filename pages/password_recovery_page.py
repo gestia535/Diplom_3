@@ -39,7 +39,15 @@ class PasswordRecoveryPage(BasePage):
 
     @allure.step('Отображение поля Пароль в активном режиме')
     def check_visibility_passw_field_active(self):
-        return self.wait_until_element_visibility(TestPasswordRecoveryLocators.VISIBLE_PASSWORD_MODE)
+        return self.find_element_with_wait(TestPasswordRecoveryLocators.INPUT_ACTIVE)
+
+    @allure.step('Кликаем на кнопку Показать/скрыть пароль')
+    def click_on_show_password_button(self):
+        self.click_on_element(TestPasswordRecoveryLocators.SHOW_PASSWORD_BUTTON)
+
+    @allure.step('Найти кнопку Сохранить')
+    def find_save_button(self):
+        self.wait_until_element_visibility(TestPasswordRecoveryLocators.SAVE_BUTTON)
 
     @allure.step('Проверка, что текущий url - это url страницы восстановления пароля ')
     def is_on_restore_password_page(self):

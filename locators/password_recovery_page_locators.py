@@ -15,5 +15,8 @@ class TestPasswordRecoveryLocators:
     HIDE_PASSWORD_BUTTON = (By.XPATH, '//div[@class="input__icon input__icon-action"]/*[local-name() = "svg"]')
 
     # Режим видимости пароля: видимый
-    VISIBLE_PASSWORD_MODE = (By.XPATH, '//label[text()="Пароль"]/parent::div[contains(@class, '
-                                       '"input_status_active")]')
+    VISIBLE_PASSWORD_MODE = (By.XPATH, '//div[@class = "input_status_active"]')
+
+    INPUT_ACTIVE = By.CSS_SELECTOR, '.input.input_status_active'
+    SHOW_PASSWORD_BUTTON = By.XPATH, '//div[contains(@class,"icon-action")]'  # кнопка "Показать пароль"
+    SAVE_BUTTON = By.XPATH, '//button[text()="Сохранить"]'  # кнопка "Сохранить"
