@@ -51,8 +51,8 @@ class PasswordRecoveryPage(BasePage):
 
     @allure.step('Проверка, что текущий url - это url страницы восстановления пароля ')
     def is_on_restore_password_page(self):
-        return self.driver.current_url == RESTORE_PASS_URL
+        return self.get_current_url() == RESTORE_PASS_URL
 
     @allure.step('Проверка, что текущий url - это url страницы сброса пароля ')
     def is_on_reset_password_page(self):
-        return self.driver.current_url == RESET_PASS_URL
+        return self.get_current_url() == RESET_PASS_URL

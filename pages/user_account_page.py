@@ -27,12 +27,12 @@ class UserAccountPage(BasePage):
 
     @allure.step('Проверка, что текущий url - это url Личного кабинета')
     def is_on_profile_page(self):
-        return self.driver.current_url == PROFILE_URL
+        return self.get_current_url() == PROFILE_URL
 
     @allure.step('Проверка, что текущий url - это url раздела История заказов')
     def is_on_order_history_page(self):
-        return self.driver.current_url == ORDER_HISTORY_URL
+        return self.get_current_url() == ORDER_HISTORY_URL
 
     @allure.step('Проверка, что текущий url - это url страницы авторизации')
     def is_on_login_page(self):
-        return self.driver.current_url == LOGIN_URL
+        return self.get_current_url() == LOGIN_URL

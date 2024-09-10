@@ -107,3 +107,7 @@ class BasePage:
     @allure.step("Нахождение нескольких элементов")
     def find_until_all_elements_located(self, locator):
         return WebDriverWait(self.driver, 20).until(expected_conditions.presence_of_all_elements_located(locator))
+
+    @allure.step("Проверка текущего url")
+    def get_current_url(self):
+        return self.driver.current_url
