@@ -1,0 +1,12 @@
+BASE_URL = 'https://stellarburgers.nomoreparties.site/'
+LOGIN_URL = 'https://stellarburgers.nomoreparties.site/login'
+RESTORE_PASS_URL = 'https://stellarburgers.nomoreparties.site/forgot-password'
+RESET_PASS_URL = 'https://stellarburgers.nomoreparties.site/reset-password'
+PROFILE_URL = 'https://stellarburgers.nomoreparties.site/account/profile'
+ORDER_HISTORY_URL = 'https://stellarburgers.nomoreparties.site/account/order-history'
+REGISTER_URL = 'https://stellarburgers.nomoreparties.site/api/auth/register'
+DELETE_URL = 'https://stellarburgers.nomoreparties.site/api/auth/user'
+ORDER_URL = 'https://stellarburgers.nomoreparties.site/api/auth/orders'
+
+TEST_EMAIL = 'pavliukova_11@gmail.com'
+TEST_PASSWORD = '1111111'
